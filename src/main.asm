@@ -1,12 +1,10 @@
 		global 		_start
 
+		extern 		print
 
 		section 	.text
-_start:		MOV 		rsi, hello
-		MOV 		rdx, 9
-		MOV 		rax, 1
-		MOV 		rdi, 1
-		SYSCALL
+_start:		MOV 		rax, hello
+		CALL 		print
 		MOV 		rax, 60
 		MOV 		rdi, 0
 		SYSCALL

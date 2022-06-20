@@ -8,6 +8,7 @@ OBJ_DIR = obj
 LIB_DIR = lib
 
 SRC_SET = main
+LIB_SET = convert math print string
 
 TARGET = gaztreat
 
@@ -20,6 +21,7 @@ $(TARGET): objects
 
 objects:
 	$(foreach src, $(SRC_SET), $(ASMC) $(ASM_FLAGS) $(SRC_DIR)/$(src).asm -o $(OBJ_DIR)/$(src).o;)
+	$(foreach lib, $(LIB_SET), $(ASMC) $(ASM_FLAGS) $(LIB_DIR)/$(lib).asm -o $(OBJ_DIR)/$(lib).o;)
 
 run:
 	./$(TARGET)
